@@ -1,11 +1,59 @@
 import { useState } from 'react';
+import { useCart } from '../context/CartContext';
 
 function Product() {
-  const [quantity, setQuantity] = useState(1);
+  const [selectedOption, setSelectedOption] = useState(null);
+  const { addToCart } = useCart();
+
+  const productOptions = [
+    {
+      id: 1,
+      quantity: 1,
+      price: 69.99,
+      stripeLink: "your-stripe-link-for-1-item",
+      label: "Personal Wellness Package",
+      features: [
+        "Perfect for personal use",
+        "Ideal for bedroom or office",
+        "Up to 10m² coverage",
+        "12-hour battery life",
+        "USB-C charging"
+      ]
+    },
+    {
+      id: 2,
+      quantity: 2,
+      price: 99.99,
+      stripeLink: "your-stripe-link-for-2-items",
+      label: "Family Package",
+      features: [
+        "Cover multiple rooms",
+        "Ideal for families",
+        "Up to 20m² coverage per device",
+        "12-hour battery life",
+        "USB-C charging",
+        "Save $39.99"
+      ]
+    },
+    {
+      id: 3,
+      quantity: 3,
+      price: 139.99,
+      stripeLink: "your-stripe-link-for-3-items",
+      label: "Complete Home Solution",
+      features: [
+        "Whole home coverage",
+        "Perfect for large families",
+        "Up to 30m² coverage per device",
+        "12-hour battery life",
+        "USB-C charging",
+        "Save $69.98"
+      ]
+    }
+  ];
 
   const product = {
     name: "Schumann Resonance Device",
-    price: 299.99,
     description: "Experience the natural frequency of Earth for better sleep and wellness",
     features: [
       "7.83 Hz Frequency Generation",
@@ -14,6 +62,24 @@ function Product() {
       "Portable Design",
       "12-Hour Battery Life"
     ]
+  };
+
+  const handleOptionSelect = (option) => {
+    setSelectedOption(option);
+  };
+
+  const handleAddToCart = () => {
+    if (!selectedOption) {
+      alert('Please select a package option');
+      return;
+    }
+    addToCart({
+      ...product,
+      id: selectedOption.id,
+      price: selectedOption.price,
+      quantity: selectedOption.quantity,
+      stripeLink: selectedOption.stripeLink
+    });
   };
 
   return (
@@ -31,48 +97,51 @@ function Product() {
         {/* Product Details */}
         <div className="mt-10 px-4 sm:px-0 sm:mt-16 lg:mt-0">
           <h1 className="text-3xl font-extrabold tracking-tight text-gray-900">{product.name}</h1>
-          <div className="mt-3">
-            <p className="text-3xl text-gray-900">${product.price}</p>
-          </div>
 
           <div className="mt-6">
             <h3 className="sr-only">Description</h3>
             <p className="text-gray-500">{product.description}</p>
           </div>
 
-          <div className="mt-6">
-            <h3 className="text-sm font-medium text-gray-900">Features</h3>
-            <ul className="mt-4 space-y-2">
-              {product.features.map((feature) => (
-                <li key={feature} className="flex items-center">
-                  <svg className="h-5 w-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                  </svg>
-                  <span className="ml-2 text-gray-500">{feature}</span>
-                </li>
+          {/* Package Options */}
+          <div className="mt-8">
+            <h3 className="text-lg font-medium text-gray-900 mb-4">Select Your Package</h3>
+            <div className="space-y-4">
+              {productOptions.map((option) => (
+                <div
+                  key={option.id}
+                  onClick={() => handleOptionSelect(option)}
+                  className={`relative rounded-lg p-6 border cursor-pointer transition-all ${
+                    selectedOption?.id === option.id 
+                      ? 'border-blue-600 bg-blue-50' 
+                      : 'border-gray-300 hover:border-blue-400'
+                  }`}
+                >
+                  <div className="flex justify-between items-center">
+                    <div>
+                      <h4 className="text-lg font-medium">{option.quantity} Device{option.quantity > 1 ? 's' : ''}</h4>
+                      <p className="text-sm text-gray-500">
+                        ${(option.price / option.quantity).toFixed(2)} per device
+                      </p>
+                    </div>
+                    <p className="text-xl font-bold text-blue-600">${option.price}</p>
+                  </div>
+                </div>
               ))}
-            </ul>
+            </div>
           </div>
 
-          <div className="mt-8">
-            <div className="flex items-center">
-              <label htmlFor="quantity" className="mr-4 text-gray-700">Quantity</label>
-              <input
-                type="number"
-                id="quantity"
-                min="1"
-                value={quantity}
-                onChange={(e) => setQuantity(parseInt(e.target.value))}
-                className="w-20 rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
-              />
-            </div>
-            <button
-              type="button"
-              className="mt-8 w-full bg-blue-600 border border-transparent rounded-md py-3 px-8 text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
-            >
-              Add to Cart
-            </button>
-          </div>
+          <button
+            onClick={handleAddToCart}
+            disabled={!selectedOption}
+            className={`mt-8 w-full py-3 px-8 rounded-md text-white text-lg font-medium ${
+              selectedOption 
+                ? 'bg-blue-600 hover:bg-blue-700' 
+                : 'bg-gray-400 cursor-not-allowed'
+            }`}
+          >
+            Add to Cart
+          </button>
         </div>
       </div>
     </div>
