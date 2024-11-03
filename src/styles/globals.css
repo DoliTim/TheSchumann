@@ -1,0 +1,19 @@
+@font-face {
+  font-family: 'Chomsky';
+  src: url('/fonts/Chomsky.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Forbes';
+  src: url('/fonts/Forbes.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'D-DIN-Bold';
+  src: url('/fonts/D-DIN-Bold.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Proxima Nova Bold';
+  src: url('/fonts/ProximaNova-Bold.woff2') format('woff2');
+} 

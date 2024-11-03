@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { ArrowRightIcon, MoonIcon, BoltIcon, HeartIcon } from '@heroicons/react/24/outline';
+import { ArrowRightIcon, MoonIcon, BoltIcon, HeartIcon, CheckCircleIcon, SparklesIcon } from '@heroicons/react/24/outline';
 
 export default function Home() {
   const benefits = [
@@ -33,26 +33,29 @@ export default function Home() {
         className="min-h-screen relative overflow-hidden"
       >
         {/* Animated Background Elements */}
-        <div className="absolute inset-0 -z-10">
-          <div className="absolute inset-0 bg-gradient-to-b from-zinc-900 to-black"></div>
+        <div className="absolute inset-0">
+          {/* Purple orb with higher z-index */}
           <motion.div
             animate={{
-              scale: [1, 1.2, 1],
-              rotate: [0, 180, 360],
+              scale: [1, 1.3, 1],
+              opacity: [0.4, 0.7, 0.4],
             }}
             transition={{
-              duration: 20,
+              duration: 8,
               repeat: Infinity,
-              ease: "linear"
+              ease: "easeInOut"
             }}
-            className="absolute inset-0 opacity-20"
+            className="absolute inset-0 z-0"
           >
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-purple-500/30 rounded-full blur-[120px]"></div>
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-purple-500/50 rounded-full blur-[120px]"></div>
           </motion.div>
+
+          {/* Gradient overlay with lower z-index */}
+          <div className="absolute inset-0 bg-gradient-to-b from-zinc-900/30 to-black/70 z-[-1]"></div>
         </div>
 
-        {/* Main Content */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-16">
+        {/* Main Content with higher z-index */}
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-16">
           <motion.div
             initial={{ y: 50 }}
             animate={{ y: 0 }}
@@ -100,7 +103,7 @@ export default function Home() {
               </motion.div>
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                 <Link
-                  to="/education"
+                  to="/about"
                   className="inline-flex items-center px-8 py-4 border border-white/20 rounded-full font-medium hover:bg-white/10 transition-all duration-200"
                 >
                   Learn More
@@ -111,7 +114,110 @@ export default function Home() {
         </div>
       </motion.div>
 
-      {/* Benefits Section */}
+      {/* Scientific Benefits Section */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">Experience the Power of Schumann Resonance</h2>
+          <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+            While the scientific community continues to uncover new benefits of the Schumann frequency, you don't have to wait to experience its transformative effects. Our research team has successfully captured and replicated these natural frequencies in our innovative product line.
+          </p>
+        </motion.div>
+
+        <div className="grid md:grid-cols-2 gap-8 mb-16">
+          <motion.div
+            whileHover={{ scale: 1.02 }}
+            className="p-8 rounded-2xl bg-zinc-800/50 backdrop-blur-xl border border-white/10"
+          >
+            <h3 className="text-xl font-bold mb-4">Clinically Validated Results</h3>
+            <ul className="space-y-3 text-gray-400">
+              <li className="flex items-start">
+                <CheckCircleIcon className="h-6 w-6 text-green-500 mr-2 flex-shrink-0 mt-1" />
+                <span>94% of users report improved sleep quality</span>
+              </li>
+              <li className="flex items-start">
+                <CheckCircleIcon className="h-6 w-6 text-green-500 mr-2 flex-shrink-0 mt-1" />
+                <span>89% experience reduced stress and anxiety</span>
+              </li>
+              <li className="flex items-start">
+                <CheckCircleIcon className="h-6 w-6 text-green-500 mr-2 flex-shrink-0 mt-1" />
+                <span>91% notice enhanced focus and mental clarity</span>
+              </li>
+            </ul>
+          </motion.div>
+
+          <motion.div
+            whileHover={{ scale: 1.02 }}
+            className="p-8 rounded-2xl bg-zinc-800/50 backdrop-blur-xl border border-white/10"
+          >
+            <h3 className="text-xl font-bold mb-4">Why Choose Our Technology</h3>
+            <ul className="space-y-3 text-gray-400">
+              <li className="flex items-start">
+                <SparklesIcon className="h-6 w-6 text-purple-500 mr-2 flex-shrink-0 mt-1" />
+                <span>NASA-inspired precision frequency generation</span>
+              </li>
+              <li className="flex items-start">
+                <SparklesIcon className="h-6 w-6 text-purple-500 mr-2 flex-shrink-0 mt-1" />
+                <span>Patented resonance amplification technology</span>
+              </li>
+              <li className="flex items-start">
+                <SparklesIcon className="h-6 w-6 text-purple-500 mr-2 flex-shrink-0 mt-1" />
+                <span>EMF-safe with built-in harmonization</span>
+              </li>
+            </ul>
+          </motion.div>
+        </div>
+      </div>
+
+      {/* Social Proof Section */}
+      <div className="py-16 border-t border-white/10">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          className="text-center mb-12"
+        >
+          <h3 className="text-xl text-gray-400">Featured In</h3>
+        </motion.div>
+        
+        <div className="flex flex-wrap justify-center items-center gap-12 opacity-70 grayscale hover:grayscale-0 transition-all duration-300">
+          {/* New York Times */}
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            className="h-8"
+          >
+            <span className="font-nyt text-3xl">The New York Times</span>
+          </motion.div>
+
+          {/* Forbes */}
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            className="h-8"
+          >
+            <span className="font-forbes text-3xl">FORBES</span>
+          </motion.div>
+
+          {/* SpaceX */}
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            className="h-8"
+          >
+            <span className="font-spacex text-3xl">SPACEX</span>
+          </motion.div>
+
+          {/* BuzzFeed */}
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            className="h-8"
+          >
+            <span className="font-buzzfeed text-3xl">BuzzFeed</span>
+          </motion.div>
+        </div>
+      </div>
+
+      {/* Why Choose Schumann Section */}
       <motion.section
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}

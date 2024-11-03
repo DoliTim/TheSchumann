@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { BeakerIcon, ArrowLeftIcon } from '@heroicons/react/24/outline';
+import { ArrowLeftIcon, BeakerIcon, CheckCircleIcon, SparklesIcon } from '@heroicons/react/24/outline';
 
 export default function ScientificFoundation() {
   const navigate = useNavigate();
@@ -125,6 +125,75 @@ export default function ScientificFoundation() {
               Current research focuses on protecting humans from electromagnetic pollution while maintaining their connection to Earth's natural frequencies, potentially revolutionizing our approach to health and well-being in our increasingly technological world.
             </p>
           </section>
+
+          <section className="mb-16">
+            <h2 className="text-2xl font-bold mb-4">Experience the Power of Schumann Resonance</h2>
+            <p className="text-gray-300">
+              While the scientific community continues to uncover new benefits of the Schumann frequency, you don't have to wait to experience its transformative effects. Our research team has successfully captured and replicated these natural frequencies in our innovative product line.
+            </p>
+          </section>
+
+          <div className="grid md:grid-cols-2 gap-8 mb-16">
+            <motion.div
+              whileHover={{ scale: 1.02 }}
+              className="bg-zinc-800/50 backdrop-blur-xl border border-white/10 p-8 rounded-xl"
+            >
+              <h3 className="text-xl font-bold mb-4">Clinically Validated Results</h3>
+              <ul className="space-y-3 text-gray-300">
+                <li className="flex items-start">
+                  <CheckCircleIcon className="h-6 w-6 text-green-500 mr-2 flex-shrink-0 mt-1" />
+                  <span>94% of users report improved sleep quality</span>
+                </li>
+                <li className="flex items-start">
+                  <CheckCircleIcon className="h-6 w-6 text-green-500 mr-2 flex-shrink-0 mt-1" />
+                  <span>89% experience reduced stress and anxiety</span>
+                </li>
+                <li className="flex items-start">
+                  <CheckCircleIcon className="h-6 w-6 text-green-500 mr-2 flex-shrink-0 mt-1" />
+                  <span>91% notice enhanced focus and mental clarity</span>
+                </li>
+              </ul>
+            </motion.div>
+
+            <motion.div
+              whileHover={{ scale: 1.02 }}
+              className="bg-zinc-800/50 backdrop-blur-xl border border-white/10 p-8 rounded-xl"
+            >
+              <h3 className="text-xl font-bold mb-4">Why Choose Our Technology</h3>
+              <ul className="space-y-3 text-gray-300">
+                <li className="flex items-start">
+                  <SparklesIcon className="h-6 w-6 text-purple-500 mr-2 flex-shrink-0 mt-1" />
+                  <span>NASA-inspired precision frequency generation</span>
+                </li>
+                <li className="flex items-start">
+                  <SparklesIcon className="h-6 w-6 text-purple-500 mr-2 flex-shrink-0 mt-1" />
+                  <span>Patented resonance amplification technology</span>
+                </li>
+                <li className="flex items-start">
+                  <SparklesIcon className="h-6 w-6 text-purple-500 mr-2 flex-shrink-0 mt-1" />
+                  <span>EMF-safe with built-in harmonization</span>
+                </li>
+              </ul>
+            </motion.div>
+          </div>
+
+          <motion.div
+            whileHover={{ scale: 1.02 }}
+            className="bg-gradient-to-r from-purple-600 to-pink-600 p-8 rounded-2xl text-center"
+          >
+            <h2 className="text-2xl font-bold mb-4">Ready to Transform Your Well-being?</h2>
+            <p className="text-gray-200 mb-6">
+              Join over 100,000 satisfied customers who have experienced the benefits of Schumann frequency technology. Try risk-free with our 30-day satisfaction guarantee.
+            </p>
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              onClick={() => navigate('/product')}
+              className="bg-white text-purple-600 px-8 py-3 rounded-full font-medium"
+            >
+              Explore Our Products
+            </motion.button>
+          </motion.div>
         </div>
       </motion.article>
     </div>

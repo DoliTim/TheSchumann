@@ -11,6 +11,7 @@ import { CartProvider } from './context/CartContext';
 import Cart from './components/Cart';
 import { blogPosts } from './data/blogPosts';
 import ScrollToTop from './components/ScrollToTop';
+import AboutSchumann from './components/AboutSchumann';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
             <Route path="/blog" element={<Blog blogPosts={blogPosts} />} />
             <Route path="/blog/:category/:slug" element={<BlogPost />} />
             <Route path="/about" element={<About />} />
+            <Route path="/about/schumann" element={<AboutSchumann />} />
           </Routes>
           <Footer />
           <Cart />

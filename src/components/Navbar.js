@@ -9,7 +9,7 @@ import {
   XMarkIcon
 } from '@heroicons/react/24/outline';
 import { useState } from 'react';
-
+import logo from '../assets/logo.png';
 export default function Navbar() {
   const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
@@ -34,13 +34,15 @@ export default function Navbar() {
               onClick={() => navigate('/')}
               className="flex items-center space-x-3 group"
             >
-              <div className="w-8 h-8 rounded-full bg-gradient-to-r from-gray-300 via-purple-500 to-purple-600 p-[2px]">
-                <div className="w-full h-full rounded-full bg-black flex items-center justify-center">
-                  <div className="w-6 h-6 rounded-full bg-gradient-to-r from-gray-300 via-purple-500 to-purple-600 flex items-center justify-center">
-                    <div className="w-4 h-4 rounded-full bg-black"></div>
-                  </div>
-                </div>
-              </div>
+            <div className="w-12 h-12 rounded-full overflow-hidden bg-gradient-to-r from-gray-300 via-purple-500 to-purple-600 p-[2px]">
+  <div className="w-full h-full rounded-full bg-black flex items-center justify-center p-[2px]">
+    <img 
+      src={logo} 
+      alt="TheSchumann Logo" 
+      className="w-full h-full object-cover rounded-full"
+    />
+  </div>
+</div>
               <span className="font-bold text-xl bg-gradient-to-r from-gray-300 via-purple-500 to-purple-600 text-transparent bg-clip-text hover:from-gray-200 hover:via-purple-400 hover:to-purple-500 transition-all">
                 TheSchumann
               </span>

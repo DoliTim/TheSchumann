@@ -1,12 +1,14 @@
-import { motion } from 'framer-motion';
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import { 
   BeakerIcon, SparklesIcon, GlobeAltIcon, DevicePhoneMobileIcon, 
   HomeIcon, LightBulbIcon, ArrowTrendingUpIcon,
   HandRaisedIcon, FireIcon, CloudIcon, MoonIcon,
   AcademicCapIcon, HeartIcon, BoltIcon, ShieldCheckIcon,
-  ExclamationTriangleIcon, ChartBarIcon, ClockIcon
+  ExclamationTriangleIcon, ChartBarIcon, ClockIcon, ChevronDownIcon
 } from '@heroicons/react/24/outline';
+import Earth3D from './Earth3D';
 
 export const blogPosts = {
   science: [
@@ -186,11 +188,16 @@ export const blogPosts = {
 };
 
 function Blog({ blogPosts }) {
+  const [expandedCategory, setExpandedCategory] = useState(null);
   const navigate = useNavigate();
 
   const handleArticleClick = (category, title) => {
     const slug = title.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
     navigate(`/blog/${category}/${slug}`);
+  };
+
+  const toggleCategory = (category) => {
+    setExpandedCategory(expandedCategory === category ? null : category);
   };
 
   return (
@@ -199,7 +206,7 @@ function Blog({ blogPosts }) {
       <motion.div 
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        className="min-h-screen relative overflow-hidden"
+        className="relative overflow-hidden"
       >
         {/* Background Elements */}
         <div className="absolute inset-0 -z-10">
@@ -221,60 +228,92 @@ function Blog({ blogPosts }) {
         </div>
 
         {/* Content Section */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-16">
-          <motion.h1 
-            className="text-5xl md:text-7xl font-bold text-center mb-16"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-          >
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-purple-200 to-white">
-              Latest Research & Insights
-            </span>
-          </motion.h1>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-16">
+          <Earth3D />
         </div>
       </motion.div>
 
-      {/* Blog Categories Section */}
+      {/* Collapsible Blog Categories */}
       {Object.entries(blogPosts).map(([category, posts]) => (
         <motion.section
           key={category}
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
-          className="py-24 bg-zinc-900/50 relative overflow-hidden border-t border-white/10"
+          className="py-6 relative overflow-hidden border-b border-white/10"
         >
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <motion.h2 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              className="text-3xl md:text-4xl font-bold mb-16 capitalize"
+            {/* Category Header Button */}
+            <motion.button
+              onClick={() => toggleCategory(category)}
+              className="w-full group"
             >
-              {category}
-            </motion.h2>
-            
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {posts.map((post, index) => (
-                <motion.article
-                  key={post.id}
-                  onClick={() => handleArticleClick(category, post.title)}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.1 }}
-                  whileHover={{ y: -10 }}
-                  className="p-8 rounded-2xl bg-zinc-800/50 backdrop-blur-xl border border-white/10 hover:border-white/20 transition-all duration-300 cursor-pointer"
+              <div className="flex items-center justify-between p-6 rounded-xl bg-zinc-900/50 backdrop-blur-xl hover:bg-zinc-800/50 transition-all duration-300">
+                <div className="flex items-center space-x-4">
+                  {/* Rotating Logo Icon */}
+                  <motion.div
+                    animate={{
+                      rotate: expandedCategory === category ? 720 : 0,
+                    }}
+                    transition={{ duration: 0.6, ease: "anticipate" }}
+                    className="relative w-12 h-12 rounded-full overflow-hidden border-2 border-white/20"
+                  >
+                    <img 
+                      src="/logo.png" 
+                      alt="Logo" 
+                      className="w-full h-full object-cover"
+                    />
+                  </motion.div>
+                  
+                  <h2 className="text-3xl font-bold capitalize">{category}</h2>
+                </div>
+
+                {/* Rotating Chevron */}
+                <motion.div
+                  animate={{ rotate: expandedCategory === category ? 180 : 0 }}
+                  transition={{ duration: 0.4 }}
                 >
-                  <div className={`bg-gradient-to-r ${post.color} p-3 rounded-lg w-fit mb-6`}>
-                    <post.icon className="h-6 w-6 text-white" />
+                  <ChevronDownIcon className="h-6 w-6 text-white/70" />
+                </motion.div>
+              </div>
+            </motion.button>
+
+            {/* Expandable Content */}
+            <AnimatePresence>
+              {expandedCategory === category && (
+                <motion.div
+                  initial={{ height: 0, opacity: 0 }}
+                  animate={{ height: "auto", opacity: 1 }}
+                  exit={{ height: 0, opacity: 0 }}
+                  transition={{ duration: 0.4, ease: "easeInOut" }}
+                  className="overflow-hidden"
+                >
+                  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 pt-8">
+                    {posts.map((post, index) => (
+                      <motion.article
+                        key={post.id}
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: index * 0.1 }}
+                        onClick={() => handleArticleClick(category, post.title)}
+                        whileHover={{ y: -10 }}
+                        className="p-8 rounded-2xl bg-zinc-800/50 backdrop-blur-xl border border-white/10 hover:border-white/20 transition-all duration-300 cursor-pointer"
+                      >
+                        <div className={`bg-gradient-to-r ${post.color} p-3 rounded-lg w-fit mb-6`}>
+                          <post.icon className="h-6 w-6 text-white" />
+                        </div>
+                        <h3 className="text-xl font-semibold mb-3">{post.title}</h3>
+                        <p className="text-gray-400 mb-4">{post.excerpt}</p>
+                        <div className="flex justify-between items-center text-sm text-gray-500">
+                          <span>{post.author}</span>
+                          <span>{post.readTime}</span>
+                        </div>
+                      </motion.article>
+                    ))}
                   </div>
-                  <h3 className="text-xl font-semibold mb-3">{post.title}</h3>
-                  <p className="text-gray-400 mb-4">{post.excerpt}</p>
-                  <div className="flex justify-between items-center text-sm text-gray-500">
-                    <span>{post.author}</span>
-                    <span>{post.readTime}</span>
-                  </div>
-                </motion.article>
-              ))}
-            </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
           </div>
         </motion.section>
       ))}
