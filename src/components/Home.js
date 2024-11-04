@@ -89,6 +89,31 @@ export default function Home() {
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
+              transition={{ delay: 0.8 }}
+              className="mb-8"
+            >
+              <motion.div
+                animate={{ 
+                  rotate: 360 
+                }}
+                transition={{ 
+                  duration: 12, 
+                  repeat: Infinity, 
+                  ease: "linear" 
+                }}
+                className="w-20 h-20 mx-auto rounded-full overflow-hidden border-2 border-purple-500/30"
+              >
+                <img 
+                  src="/logo-circle.png" 
+                  alt="Schumann Logo" 
+                  className="w-full h-full object-cover"
+                />
+              </motion.div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
               transition={{ delay: 0.6 }}
               className="flex flex-col sm:flex-row gap-4 justify-center items-center"
             >
@@ -294,6 +319,7 @@ export default function Home() {
           </motion.div>
         </div>
       </motion.section>
+
     </div>
   );
 } 

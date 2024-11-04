@@ -407,14 +407,15 @@ function Product() {
           <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
             Join over 100,000 satisfied customers who have discovered the power of natural frequency alignment. Try risk-free with our 30-day satisfaction guarantee.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="px-8 py-4 bg-purple-600 rounded-xl text-white font-medium hover:bg-purple-700 transition-all duration-200"
-            >
-              Get Started Now
-            </motion.button>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
+            <div className="flex items-center">
+              <ShieldCheckIcon className="h-6 w-6 text-green-500 mr-2" />
+              <span className="text-gray-300">30-Day Money Back Guarantee</span>
+            </div>
+            <div className="flex items-center">
+              <TruckIcon className="h-6 w-6 text-blue-500 mr-2" />
+              <span className="text-gray-300">Free Express Shipping</span>
+            </div>
           </div>
         </motion.div>
       </div>
