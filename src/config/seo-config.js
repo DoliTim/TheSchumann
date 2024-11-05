@@ -1,15 +1,16 @@
 export const seoConfig = {
   home: {
-    title: "Schumann Resonance Device | Earth's Natural 7.83 Hz Frequency Technology",
+    title: "TheSchumann | Earth's Natural 7.83 Hz Frequency Technology",
     description: "Experience NASA-validated 7.83 Hz Schumann frequency technology. 94% sleep improvement, clinically proven stress reduction, and enhanced wellbeing. Used by 100,000+ customers worldwide.",
     keywords: "Schumann resonance, 7.83 Hz, Earth frequency, NASA technology, EMF protection, sleep improvement, stress reduction, wellness device",
+    ogImage: "/og-image.jpg",
     schema: {
       "@type": "Product",
       "name": "Schumann Resonance Device",
       "description": "NASA-inspired natural frequency generator for optimal wellness",
       "brand": {
         "@type": "Brand",
-        "name": "Schumann"
+        "name": "TheSchumann"
       },
       "aggregateRating": {
         "@type": "AggregateRating",
@@ -18,12 +19,12 @@ export const seoConfig = {
       },
       "offers": {
         "@type": "Offer",
-        "price": "499.00",
+        "price": "69.99",
         "priceCurrency": "USD",
         "availability": "https://schema.org/InStock",
         "seller": {
           "@type": "Organization",
-          "name": "Schumann"
+          "name": "TheSchumann"
         }
       }
     }
@@ -61,20 +62,21 @@ export const seoConfig = {
     }
   },
   product: {
-    title: "Buy Schumann Device | Premium 7.83 Hz Frequency Generator",
-    description: "Advanced NASA-inspired Schumann frequency generator. 94% sleep improvement, EMF protection, and 30-day guarantee. Join 100,000+ satisfied customers worldwide.",
+    title: "Buy TheSchumann Device | Premium 7.83 Hz Frequency Generator",
+    description: "Transform your sleep and well-being with TheSchumann device. Features 7.83Hz frequency generation, EMF protection, and 12-hour battery life. Free worldwide shipping.",
     keywords: "buy Schumann device, 7.83 Hz generator, EMF protection, sleep improvement, frequency therapy, wellness technology",
+    ogImage: "/product-og-image.jpg",
     schema: {
       "@type": "Product",
-      "name": "Schumann Resonance Device",
+      "name": "TheSchumann Resonance Device",
       "description": "Premium frequency generator with NASA-inspired technology",
       "brand": {
         "@type": "Brand",
-        "name": "Schumann"
+        "name": "TheSchumann"
       },
       "offers": {
         "@type": "Offer",
-        "price": "69.00",
+        "price": "69.99",
         "priceCurrency": "USD",
         "availability": "https://schema.org/InStock",
         "priceValidUntil": "2024-12-31",
@@ -84,21 +86,8 @@ export const seoConfig = {
         "@type": "AggregateRating",
         "ratingValue": "4.8",
         "reviewCount": "12500"
-      },
-      "review": [
-        {
-          "@type": "Review",
-          "reviewRating": {
-            "@type": "Rating",
-            "ratingValue": "5"
-          },
-          "author": {
-            "@type": "Person",
-            "name": "Dr. Michael Chen"
-          },
-          "reviewBody": "The implementation of Schumann frequency generators marked a turning point in space medicine."
-        }
-      ]
+      }
+      
     }
   },
   education: {

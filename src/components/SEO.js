@@ -44,14 +44,28 @@ export default function SEO({
         </>
       )}
 
-      {/* Existing Meta Tags */}
+      {/* Open Graph / Facebook */}
       <meta property="og:type" content={type} />
       <meta property="og:url" content={fullUrl} />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:image" content={`${fullUrl}${image}`} />
       
-      {/* Rest of your existing meta tags */}
+      {/* Twitter */}
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content={title} />
+      <meta name="twitter:description" content={description} />
+      <meta name="twitter:image" content={`${fullUrl}${image}`} />
+
+      {/* Schema.org JSON-LD */}
+      {schema && (
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            ...schema
+          })}
+        </script>
+      )}
     </Helmet>
   );
 } 
