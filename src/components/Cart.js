@@ -9,7 +9,15 @@ export default function Cart() {
   if (!isCartOpen) return null;
 
   const handleCheckout = () => {
-    window.location.href = getStripeLink();
+    const stripeLinks = {
+      1: 'https://buy.stripe.com/8wMaH22qO2yxeWc7ss',
+      2: 'https://buy.stripe.com/7sI3eAc1oc97g0g289',
+      3: 'https://buy.stripe.com/4gwcPa3uS0qpaFW5kn'
+    };
+    
+    // Assuming there's only one item in cart for now
+    const quantity = cart[0]?.quantity || 1;
+    window.location.href = stripeLinks[quantity] || stripeLinks[1]; // Default to 1x package if quantity not found
   };
 
   const getPackageLabel = (quantity) => {
