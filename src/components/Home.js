@@ -218,56 +218,68 @@ export default function Home() {
           </motion.div>
           
           <div className="max-w-6xl mx-auto px-4">
-            <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12 opacity-70 grayscale hover:grayscale-0 transition-all duration-300">
+            <div className="grid grid-cols-2 md:flex md:flex-row justify-center items-center gap-6 md:gap-16">
               {/* New York Times */}
               <motion.div
                 whileHover={{ scale: 1.05 }}
-                className="w-32 md:w-40 h-12 md:h-16 relative"
+                className="h-16 w-40 flex items-center justify-center bg-zinc-800/50 rounded-lg p-4"
               >
                 <img 
                   src="/logos/nyt-logo.svg" 
                   alt="The New York Times Logo"
-                  className="object-contain w-full h-full"
-                  loading="lazy"
+                  className="w-full h-full object-contain"
+                  onError={(e) => {
+                    e.target.style.display = 'none';
+                    e.target.parentElement.innerHTML = 'NYT';
+                  }}
                 />
               </motion.div>
 
               {/* Forbes */}
               <motion.div
                 whileHover={{ scale: 1.05 }}
-                className="w-24 md:w-32 h-12 md:h-16 relative"
+                className="h-16 w-40 flex items-center justify-center bg-zinc-800/50 rounded-lg p-4"
               >
                 <img 
                   src="/logos/forbes-logo.svg" 
                   alt="Forbes Logo"
-                  className="object-contain w-full h-full"
-                  loading="lazy"
+                  className="w-full h-full object-contain"
+                  onError={(e) => {
+                    e.target.style.display = 'none';
+                    e.target.parentElement.innerHTML = 'Forbes';
+                  }}
                 />
               </motion.div>
 
               {/* NASA */}
               <motion.div
                 whileHover={{ scale: 1.05 }}
-                className="w-24 md:w-32 h-12 md:h-16 relative"
+                className="h-16 w-40 flex items-center justify-center bg-zinc-800/50 rounded-lg p-4"
               >
                 <img 
                   src="/logos/nasa-logo.svg" 
                   alt="NASA Logo"
-                  className="object-contain w-full h-full"
-                  loading="lazy"
+                  className="w-full h-full object-contain"
+                  onError={(e) => {
+                    e.target.style.display = 'none';
+                    e.target.parentElement.innerHTML = 'NASA';
+                  }}
                 />
               </motion.div>
 
               {/* Scientific American */}
               <motion.div
                 whileHover={{ scale: 1.05 }}
-                className="w-32 md:w-40 h-12 md:h-16 relative"
+                className="h-16 w-40 flex items-center justify-center bg-zinc-800/50 rounded-lg p-4"
               >
                 <img 
                   src="/logos/scientific-american-logo.svg" 
                   alt="Scientific American Logo"
-                  className="object-contain w-full h-full"
-                  loading="lazy"
+                  className="w-full h-full object-contain"
+                  onError={(e) => {
+                    e.target.style.display = 'none';
+                    e.target.parentElement.innerHTML = 'Scientific American';
+                  }}
                 />
               </motion.div>
             </div>
