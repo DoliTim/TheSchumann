@@ -218,52 +218,56 @@ export default function Home() {
           </motion.div>
           
           <div className="max-w-6xl mx-auto px-4">
-            <div className="flex flex-wrap justify-center items-center gap-12 opacity-70 grayscale hover:grayscale-0 transition-all duration-300">
+            <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12 opacity-70 grayscale hover:grayscale-0 transition-all duration-300">
               {/* New York Times */}
               <motion.div
                 whileHover={{ scale: 1.05 }}
-                className="w-40 h-16 relative"
+                className="w-32 md:w-40 h-12 md:h-16 relative"
               >
                 <img 
                   src="/logos/nyt-logo.svg" 
                   alt="The New York Times Logo"
                   className="object-contain w-full h-full"
+                  loading="lazy"
                 />
               </motion.div>
 
               {/* Forbes */}
               <motion.div
                 whileHover={{ scale: 1.05 }}
-                className="w-32 h-16 relative"
+                className="w-24 md:w-32 h-12 md:h-16 relative"
               >
                 <img 
                   src="/logos/forbes-logo.svg" 
                   alt="Forbes Logo"
                   className="object-contain w-full h-full"
+                  loading="lazy"
                 />
               </motion.div>
 
               {/* NASA */}
               <motion.div
                 whileHover={{ scale: 1.05 }}
-                className="w-32 h-16 relative"
+                className="w-24 md:w-32 h-12 md:h-16 relative"
               >
                 <img 
                   src="/logos/nasa-logo.svg" 
                   alt="NASA Logo"
                   className="object-contain w-full h-full"
+                  loading="lazy"
                 />
               </motion.div>
 
               {/* Scientific American */}
               <motion.div
                 whileHover={{ scale: 1.05 }}
-                className="w-40 h-16 relative"
+                className="w-32 md:w-40 h-12 md:h-16 relative"
               >
                 <img 
                   src="/logos/scientific-american-logo.svg" 
                   alt="Scientific American Logo"
                   className="object-contain w-full h-full"
+                  loading="lazy"
                 />
               </motion.div>
             </div>
