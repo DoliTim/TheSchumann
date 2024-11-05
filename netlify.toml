@@ -3,12 +3,6 @@
   publish = "build"
 
 [[redirects]]
-  from = "/lander"
-  to = "/"
-  status = 301
-  force = true
-
-[[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
