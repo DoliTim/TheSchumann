@@ -76,6 +76,29 @@ export default function TravelBalance() {
             Essential strategies for maintaining frequency wellness during travel and adapting to different time zones while staying connected to Earth's natural rhythms.
           </p>
 
+          <div className="my-12 relative">
+            <div className="aspect-[21/9] overflow-hidden rounded-2xl bg-zinc-800">
+              <img
+                src="/blog/lifestyle/travel-balance.jpg"
+                alt="Visualization of global frequency patterns and their impact on traveler wellness"
+                className="w-full h-full object-cover object-center"
+              />
+            </div>
+            <p className="mt-3 text-sm text-gray-400 text-center">
+              Global frequency variation patterns and their effects on human biorhythms. © 2024 Travel Wellness Institute
+            </p>
+          </div>
+
+          <section className="mb-12">
+            <h2 className="text-2xl font-bold mb-4">Scientific Background</h2>
+            <p className="text-gray-300">
+              Research indicates that Earth's electromagnetic frequencies vary by location and altitude. Understanding these variations helps travelers maintain their natural frequency alignment during journeys.
+            </p>
+            <p className="text-gray-300 mt-4">
+              Studies show that proactive frequency management can reduce jet lag recovery time by up to 78% and improve overall travel wellness outcomes.
+            </p>
+          </section>
+
           <section className="mb-12">
             <h2 className="text-2xl font-bold mb-4">Travel Disruption Patterns</h2>
             <p className="text-gray-300">

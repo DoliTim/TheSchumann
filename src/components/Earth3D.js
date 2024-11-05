@@ -40,7 +40,10 @@ export default function Earth3D() {
             animate={{ opacity: 1, y: 0 }}
             className="text-4xl md:text-5xl font-bold mb-4"
           >
-            Latest Research & Insights
+            Understanding
+Earth's Frequency
+
+
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -48,7 +51,8 @@ export default function Earth3D() {
             transition={{ delay: 0.2 }}
             className="text-xl text-gray-300"
           >
-            Discover the science behind Earth's natural frequency
+
+Discover how the Schumann resonance impacts human health and well-being through decades of scientific research.
           </motion.p>
         </div>
       </div>

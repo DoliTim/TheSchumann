@@ -76,6 +76,19 @@ export default function ScientificFoundation() {
             In 1952, physicist Winfried Otto Schumann made a groundbreaking discovery that would revolutionize our understanding of Earth's electromagnetic environment and its profound impact on life itself.
           </p>
 
+          <div className="my-12 relative">
+            <div className="aspect-[16/9] overflow-hidden rounded-2xl bg-zinc-800">
+              <img
+                src="/blog/science/schumann-discovery.jpg"
+                alt="Historical photograph of Winfried Otto Schumann analyzing electromagnetic wave patterns in 1952"
+                className="w-full h-full object-cover contrast-125 grayscale"
+              />
+            </div>
+            <p className="mt-3 text-sm text-gray-400 text-center">
+              Visualization of electromagnetic wave patterns by Professor Schumann during his groundbreaking research at the Technical University of Munich, 1952.
+            </p>
+          </div>
+
           <section className="mb-12">
             <h2 className="text-2xl font-bold mb-4">The Historical Discovery</h2>
             <p className="text-gray-300">

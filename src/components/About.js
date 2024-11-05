@@ -6,25 +6,25 @@ import Earth3D from './Earth3D';
 function About() {
   const team = [
     {
-      name: "Dr. Sarah Johnson",
-      role: "Chief Scientific Officer",
-      bio: "PhD in Biophysics with 15 years of research in electromagnetic frequencies. Pioneer in human-frequency interaction studies.",
-      image: "/team/sarah.jpg",
-      color: "from-purple-500 to-blue-500"
-    },
-    {
       name: "Dr. Elena Rodriguez",
-      role: "Lead Neuroscientist",
-      bio: "Specialized in cognitive enhancement through frequency manipulation. Former researcher at Harvard's Brain Science Initiative.",
+      role: "Chief Scientific Officer",
+      bio: "PhD in Neuroscience with expertise in electromagnetic frequencies and brain-wave patterns at Harvard University. Pioneer in human-frequency interaction studies.",
       image: "/team/elena.jpg",
-      color: "from-blue-500 to-cyan-500"
+      color: "from-purple-500 to-pink-500"
     },
     {
       name: "Michael Chen",
       role: "Product Development Lead",
-      bio: "Engineering expert with 10+ years experience in frequency-based wellness devices. Previously led R&D at Tesla.",
+      bio: "Engineering expert with 20+ years experience in techonology revolutionizing devices. Previously led R&D at major tech companies.",
       image: "/team/michael.jpg",
-      color: "from-pink-500 to-purple-500"
+      color: "from-blue-500 to-cyan-500"
+    },
+    {
+      name: "Dr. Sarah Johnson",
+      role: "Lead Research Scientist",
+      bio: "Specialized in biophysics and electromagnetic field research. Former researcher at leading  Stanford's STAR Laboratory (Space, Telecommunications and Radioscience).",
+      image: "/team/sarah.jpg",
+      color: "from-green-500 to-teal-500"
     }
   ];
 
@@ -152,11 +152,11 @@ function About() {
                   transition={{ delay: index * 0.2 }}
                   className="rounded-2xl bg-zinc-800/50 backdrop-blur-xl border border-white/10 overflow-hidden"
                 >
-                  <div className={`h-48 bg-gradient-to-r ${member.color}`}>
+                  <div className="h-56">
                     <img
                       src={member.image}
                       alt={member.name}
-                      className="w-full h-full object-cover mix-blend-overlay"
+                      className="w-full h-full object-cover"
                     />
                   </div>
                   <div className="p-6">

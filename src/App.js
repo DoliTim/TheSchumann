@@ -12,28 +12,31 @@ import Cart from './components/Cart';
 import { blogPosts } from './data/blogPosts';
 import ScrollToTop from './components/ScrollToTop';
 import AboutSchumann from './components/AboutSchumann';
+import { HelmetProvider } from 'react-helmet-async';
 
 function App() {
   return (
-    <CartProvider>
-      <Router>
-        <div className="min-h-screen bg-black">
-          <Navbar />
-          <ScrollToTop />
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/product" element={<Product />} />
-            <Route path="/education" element={<Education />} />
-            <Route path="/blog" element={<Blog blogPosts={blogPosts} />} />
-            <Route path="/blog/:category/:slug" element={<BlogPost />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/about/schumann" element={<AboutSchumann />} />
-          </Routes>
-          <Footer />
-          <Cart />
-        </div>
-      </Router>
-    </CartProvider>
+    <HelmetProvider>
+      <CartProvider>
+        <Router>
+          <div className="min-h-screen bg-black">
+            <Navbar />
+            <ScrollToTop />
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/product" element={<Product />} />
+              <Route path="/education" element={<Education />} />
+              <Route path="/blog" element={<Blog blogPosts={blogPosts} />} />
+              <Route path="/blog/:category/:slug" element={<BlogPost />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/about/schumann" element={<AboutSchumann />} />
+            </Routes>
+            <Footer />
+            <Cart />
+          </div>
+        </Router>
+      </CartProvider>
+    </HelmetProvider>
   );
 }
 

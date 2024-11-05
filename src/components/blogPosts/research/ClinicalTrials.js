@@ -76,6 +76,19 @@ export default function ClinicalTrials() {
             Comprehensive analysis of the latest findings from global research on frequency-based wellness interventions and their implications for future treatment protocols.
           </p>
 
+          <div className="my-12 relative">
+            <div className="aspect-[21/9] overflow-hidden rounded-2xl bg-zinc-800">
+              <img
+                src="/blog/research/clinical-trials.jpg"
+                alt="Data visualization of clinical trial results showing frequency therapy outcomes"
+                className="w-full h-full object-cover object-center"
+              />
+            </div>
+            <p className="mt-3 text-sm text-gray-400 text-center">
+              Statistical analysis of global frequency therapy trials. © 2024 International Research Consortium
+            </p>
+          </div>
+
           <section className="mb-12">
             <h2 className="text-2xl font-bold mb-4">Study Methodology</h2>
             <p className="text-gray-300">

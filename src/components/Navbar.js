@@ -34,15 +34,19 @@ export default function Navbar() {
               onClick={() => navigate('/')}
               className="flex items-center space-x-3 group"
             >
-            <div className="w-12 h-12 rounded-full overflow-hidden bg-gradient-to-r from-gray-300 via-purple-500 to-purple-600 p-[2px]">
-  <div className="w-full h-full rounded-full bg-black flex items-center justify-center p-[2px]">
-    <img 
-      src={logo} 
-      alt="TheSchumann Logo" 
-      className="w-full h-full object-cover rounded-full"
-    />
-  </div>
-</div>
+              <motion.div 
+                whileHover={{ rotate: 360 }}
+                transition={{ duration: 0.7, ease: "easeInOut" }}
+                className="w-12 h-12 rounded-full overflow-hidden bg-gradient-to-r from-purple-500/30 to-pink-600/30 p-[2px]"
+              >
+                <div className="w-full h-full rounded-full bg-black/50 backdrop-blur-sm flex items-center justify-center p-[2px]">
+                  <img 
+                    src={logo} 
+                    alt="TheSchumann Logo" 
+                    className="w-full h-full object-cover rounded-full"
+                  />
+                </div>
+              </motion.div>
               <span className="font-bold text-xl bg-gradient-to-r from-gray-300 via-purple-500 to-purple-600 text-transparent bg-clip-text hover:from-gray-200 hover:via-purple-400 hover:to-purple-500 transition-all">
                 TheSchumann
               </span>
@@ -63,7 +67,7 @@ export default function Navbar() {
               className="text-gray-300 hover:text-white transition-colors flex items-center space-x-2"
             >
               <BookOpenIcon className="h-5 w-5" />
-              <span>Blog</span>
+              <span>Scientific Research</span>
             </button>
             <button 
               onClick={() => navigate('/about')}

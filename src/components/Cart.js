@@ -1,6 +1,7 @@
 import { useCart } from '../context/CartContext';
 import { XMarkIcon } from '@heroicons/react/24/outline';
 import { motion, AnimatePresence } from 'framer-motion';
+import { ShieldCheckIcon, TruckIcon } from '@heroicons/react/24/solid';
 
 export default function Cart() {
   const { cart, isCartOpen, setIsCartOpen, removeFromCart, getTotalPrice, getStripeLink } = useCart();
@@ -106,19 +107,57 @@ export default function Cart() {
             </div>
 
             <div className="border-t border-white/10 p-6">
+              {getTotalPrice() < 80 && (
+                <div className="mb-4 text-center bg-blue-900/20 p-3 rounded-lg border border-blue-500/20">
+                  <span className="text-sm text-blue-400">
+                    Add ${(80 - getTotalPrice()).toFixed(2)} more for FREE Worldwide Shipping
+                  </span>
+                </div>
+              )}
+              
               <div className="flex justify-between mb-6">
                 <span className="text-lg font-semibold text-white">Total</span>
                 <span className="text-lg font-semibold text-white">
                   ${getTotalPrice().toFixed(2)}
                 </span>
               </div>
+
+              <div className="space-y-3 mb-4">
+                <div className="flex items-center justify-between p-4 bg-zinc-900/50 rounded-lg border border-white/5 hover:border-white/10 transition-colors">
+                  <div className="flex items-center gap-3">
+                    <img 
+                      src="/stripe-logo.svg" 
+                      alt="Stripe" 
+                      className="h-7 w-auto"
+                    />
+                    <div className="h-6 w-px bg-white/10" /> {/* Vertical divider */}
+                    <div className="flex flex-col">
+                      <span className="text-white/90 text-sm font-medium">Secure Checkout</span>
+                      <span className="text-white/50 text-xs">Bank-level encryption</span>
+                    </div>
+                  </div>
+                  <ShieldCheckIcon className="h-5 w-5 text-[#635BFF]" /> {/* Stripe's purple color */}
+                </div>
+                
+                <div className="flex items-center justify-center gap-6 text-sm text-gray-400">
+                  <div className="flex items-center">
+                    <ShieldCheckIcon className="h-5 w-5 text-green-500 mr-2" />
+                    <span className="font-medium">256-bit SSL Security</span>
+                  </div>
+                  <div className="flex items-center">
+                    <TruckIcon className="h-5 w-5 text-blue-500 mr-2" />
+                    <span className="font-medium">{getTotalPrice() >= 80 ? 'Free Global Shipping' : 'Express Shipping'}</span>
+                  </div>
+                </div>
+              </div>
+
               <motion.button
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 onClick={handleCheckout}
                 className="w-full bg-gradient-to-r from-purple-600 to-blue-600 text-white py-4 px-6 rounded-lg font-medium hover:from-purple-700 hover:to-blue-700 transition-all duration-200 shadow-lg"
               >
-                Proceed to Checkout
+                Secure Checkout
               </motion.button>
             </div>
           </div>
