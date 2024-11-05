@@ -3,6 +3,10 @@ import { Link } from 'react-router-dom';
 import { ArrowRightIcon, MoonIcon, BoltIcon, HeartIcon, CheckCircleIcon, SparklesIcon } from '@heroicons/react/24/outline';
 import SEO from './SEO';
 import { seoConfig } from '../config/seo-config';
+import nytLogo from '../assets/logos-png/nyt-logo.png';
+import forbesLogo from '../assets/logos-png/forbes-logo.png';
+import nasaLogo from '../assets/logos-png/nasa-logo.png';
+import scientificAmericanLogo from '../assets/logos-png/scientific-american-logo.png';
 
 export default function Home() {
   const benefits = [
@@ -225,13 +229,9 @@ export default function Home() {
                 className="h-16 w-40 flex items-center justify-center bg-zinc-800/50 rounded-lg p-4"
               >
                 <img 
-                  src="/logos/nyt-logo.svg" 
+                  src={nytLogo} 
                   alt="The New York Times Logo"
                   className="w-full h-full object-contain"
-                  onError={(e) => {
-                    e.target.style.display = 'none';
-                    e.target.parentElement.innerHTML = 'NYT';
-                  }}
                 />
               </motion.div>
 
@@ -241,13 +241,9 @@ export default function Home() {
                 className="h-16 w-40 flex items-center justify-center bg-zinc-800/50 rounded-lg p-4"
               >
                 <img 
-                  src="/logos/forbes-logo.svg" 
+                  src={forbesLogo} 
                   alt="Forbes Logo"
                   className="w-full h-full object-contain"
-                  onError={(e) => {
-                    e.target.style.display = 'none';
-                    e.target.parentElement.innerHTML = 'Forbes';
-                  }}
                 />
               </motion.div>
 
@@ -257,13 +253,9 @@ export default function Home() {
                 className="h-16 w-40 flex items-center justify-center bg-zinc-800/50 rounded-lg p-4"
               >
                 <img 
-                  src="/logos/nasa-logo.svg" 
+                  src={nasaLogo} 
                   alt="NASA Logo"
                   className="w-full h-full object-contain"
-                  onError={(e) => {
-                    e.target.style.display = 'none';
-                    e.target.parentElement.innerHTML = 'NASA';
-                  }}
                 />
               </motion.div>
 
@@ -273,13 +265,9 @@ export default function Home() {
                 className="h-16 w-40 flex items-center justify-center bg-zinc-800/50 rounded-lg p-4"
               >
                 <img 
-                  src="/logos/scientific-american-logo.svg" 
+                  src={scientificAmericanLogo} 
                   alt="Scientific American Logo"
                   className="w-full h-full object-contain"
-                  onError={(e) => {
-                    e.target.style.display = 'none';
-                    e.target.parentElement.innerHTML = 'Scientific American';
-                  }}
                 />
               </motion.div>
             </div>
