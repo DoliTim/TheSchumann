@@ -123,7 +123,7 @@ export default function Navbar() {
                 className="w-full text-gray-300 hover:text-white transition-colors flex items-center space-x-2"
               >
                 <BookOpenIcon className="h-5 w-5" />
-                <span>Blog</span>
+                <span>Scientific Research</span>
               </button>
               <button 
                 onClick={() => handleMobileNavigation('/about')}

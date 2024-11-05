@@ -116,14 +116,6 @@ export default function Cart() {
             </div>
 
             <div className="border-t border-white/10 p-6">
-              {getTotalPrice() < 80 && (
-                <div className="mb-4 text-center bg-blue-900/20 p-3 rounded-lg border border-blue-500/20">
-                  <span className="text-sm text-blue-400">
-                    Add ${(80 - getTotalPrice()).toFixed(2)} more for FREE Worldwide Shipping
-                  </span>
-                </div>
-              )}
-              
               <div className="flex justify-between mb-6">
                 <span className="text-lg font-semibold text-white">Total</span>
                 <span className="text-lg font-semibold text-white">
@@ -155,7 +147,7 @@ export default function Cart() {
                   </div>
                   <div className="flex items-center">
                     <TruckIcon className="h-5 w-5 text-blue-500 mr-2" />
-                    <span className="font-medium">{getTotalPrice() >= 80 ? 'Free Global Shipping' : 'Express Shipping'}</span>
+                    <span className="font-medium">Free Global Shipping</span>
                   </div>
                 </div>
               </div>

@@ -237,9 +237,7 @@ export default function Product() {
                             <span className="ml-2 text-green-400">Save ${((69.99 * option.quantity) - option.price).toFixed(2)}</span>
                           )}
                         </p>
-                        {option.price >= 80 && (
-                          <p className="text-sm text-blue-400 mt-1">✈️ Free Worldwide Shipping</p>
-                        )}
+                        <p className="text-sm text-blue-400 mt-1">✈️ Free Worldwide Shipping</p>
                       </div>
                       <p className="text-xl font-bold text-blue-400">${option.price}</p>
                     </div>
@@ -379,14 +377,14 @@ export default function Product() {
             <h3 className="text-2xl font-bold mb-6 text-center">Endorsed by Leading Experts</h3>
             <div className="grid md:grid-cols-2 gap-8">
               <div className="flex items-start space-x-4">
-                <img src="/expert-1.jpg" alt="Dr. James Wilson" className="w-12 h-12 rounded-full" />
+                
                 <div>
                   <p className="text-gray-300 italic">"The clinical data is compelling. This device represents a significant breakthrough in frequency-based wellness technology."</p>
                   <p className="text-sm text-purple-400 mt-2">- Dr. James Wilson, Neuroscience Research Institute</p>
                 </div>
               </div>
               <div className="flex items-start space-x-4">
-                <img src="/expert-2.jpg" alt="Dr. Sarah Chen" className="w-12 h-12 rounded-full" />
+               
                 <div>
                   <p className="text-gray-300 italic">"Our research confirms the device's ability to effectively replicate Earth's natural frequency for optimal sleep enhancement."</p>
                   <p className="text-sm text-purple-400 mt-2">- Dr. Sarah Chen, Sleep Research Center</p>
