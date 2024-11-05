@@ -51,7 +51,10 @@ export default function Home() {
               }}
               className="absolute inset-0 z-0"
             >
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-purple-500/50 rounded-full blur-[120px]"></div>
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 
+                w-[300px] h-[300px] md:w-[600px] md:h-[600px] 
+                bg-purple-500/50 rounded-full blur-[60px] md:blur-[120px]">
+              </div>
             </motion.div>
 
             {/* Gradient overlay with lower z-index */}
