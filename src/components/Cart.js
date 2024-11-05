@@ -2,6 +2,7 @@ import { useCart } from '../context/CartContext';
 import { XMarkIcon } from '@heroicons/react/24/outline';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ShieldCheckIcon, TruckIcon } from '@heroicons/react/24/solid';
+import stripeLogo from '../assets/logos-png/stripe-logo.png';
 
 export default function Cart() {
   const { cart, isCartOpen, setIsCartOpen, removeFromCart, getTotalPrice, getStripeLink } = useCart();
@@ -134,9 +135,9 @@ export default function Cart() {
                 <div className="flex items-center justify-between p-4 bg-zinc-900/50 rounded-lg border border-white/5 hover:border-white/10 transition-colors">
                   <div className="flex items-center gap-3">
                     <img 
-                      src="/stripe-logo.svg" 
+                      src={stripeLogo} 
                       alt="Stripe" 
-                      className="h-7 w-auto"
+                      className="h-7 w-auto object-contain"
                     />
                     <div className="h-6 w-px bg-white/10" /> {/* Vertical divider */}
                     <div className="flex flex-col">
