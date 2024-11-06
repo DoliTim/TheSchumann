@@ -90,14 +90,33 @@ export const seoConfig = {
           "url": "https://theschumann.com/product-front.jpg",
           "width": "1200",
           "height": "800",
-          "caption": "The Schumann 7.83 Hz Frequency Generator - Premium Model"
+          "caption": "The Schumann 7.83 Hz Frequency Generator - Premium Model",
+          "thumbnailUrl": "https://theschumann.com/product-front-thumb.jpg",
+          "description": "Front view of the Schumann Device showing its sleek design and LED display",
+          "contentUrl": "https://theschumann.com/product-front.jpg",
+          "creditText": "© 2024 TheSchumann"
         },
         {
           "@type": "ImageObject",
           "url": "https://theschumann.com/product-side.jpg",
           "width": "800",
           "height": "800",
-          "caption": "Side profile of The Schumann device showing premium finish"
+          "caption": "Side profile of The Schumann device showing premium finish",
+          "thumbnailUrl": "https://theschumann.com/product-side-thumb.jpg",
+          "description": "Side view highlighting the device's premium materials and USB-C port",
+          "contentUrl": "https://theschumann.com/product-side.jpg",
+          "creditText": "© 2024 TheSchumann"
+        },
+        {
+          "@type": "ImageObject",
+          "url": "https://theschumann.com/product-lifestyle.jpg",
+          "width": "1200",
+          "height": "800",
+          "caption": "The Schumann Device in a modern bedroom setting",
+          "thumbnailUrl": "https://theschumann.com/product-lifestyle-thumb.jpg",
+          "description": "Lifestyle image showing the Schumann Device in use for optimal sleep enhancement",
+          "contentUrl": "https://theschumann.com/product-lifestyle.jpg",
+          "creditText": "© 2024 TheSchumann"
         }
       ]
     }
