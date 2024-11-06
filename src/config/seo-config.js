@@ -1,6 +1,6 @@
 export const seoConfig = {
   home: {
-    title: "TheSchumann | Earth's Natural 7.83 Hz Frequency Technology",
+    title: "The Schumann | Earth's Natural 7.83 Hz Frequency Technology",
     description: "Experience NASA-validated 7.83 Hz Schumann frequency technology. 94% sleep improvement, clinically proven stress reduction, and enhanced wellbeing. Used by 100,000+ customers worldwide.",
     keywords: "Schumann resonance, 7.83 Hz, Earth frequency, NASA technology, EMF protection, sleep improvement, stress reduction, wellness device",
     ogImage: "/og-image.jpg",
@@ -10,7 +10,7 @@ export const seoConfig = {
       "description": "NASA-inspired natural frequency generator for optimal wellness",
       "brand": {
         "@type": "Brand",
-        "name": "TheSchumann"
+        "name": "The Schumann"
       },
       "aggregateRating": {
         "@type": "AggregateRating",
@@ -24,7 +24,7 @@ export const seoConfig = {
         "availability": "https://theschumann.com/product",
         "seller": {
           "@type": "Organization",
-          "name": "TheSchumann"
+          "name": "The Schumann"
         }
       }
     }
@@ -62,17 +62,17 @@ export const seoConfig = {
     }
   },
   product: {
-    title: "Buy TheSchumann Device | Premium 7.83 Hz Frequency Generator",
+    title: "Buy The Schumann Device | Premium 7.83 Hz Frequency Generator",
     description: "Transform your sleep and well-being with TheSchumann device. Features 7.83Hz frequency generation, EMF protection, and 12-hour battery life. Free worldwide shipping.",
     keywords: "buy Schumann device, 7.83 Hz generator, EMF protection, sleep improvement, frequency therapy, wellness technology",
     ogImage: "/product-og-image.jpg",
     schema: {
       "@type": "Product",
-      "name": "TheSchumann Resonance Device",
+      "name": "The Schumann Resonance Device",
       "description": "Premium frequency generator with NASA-inspired technology",
       "brand": {
         "@type": "Brand",
-        "name": "TheSchumann"
+        "name": "The Schumann"
       },
       "offers": {
         "@type": "Offer",
@@ -93,14 +93,14 @@ export const seoConfig = {
           "url": "https://theschumann.com/product-front.jpg",
           "width": "1200",
           "height": "800",
-          "caption": "TheSchumann 7.83 Hz Frequency Generator - Premium Model"
+          "caption": "The Schumann 7.83 Hz Frequency Generator - Premium Model"
         },
         {
           "@type": "ImageObject",
           "url": "https://theschumann.com/product-side.jpg",
           "width": "800",
           "height": "800",
-          "caption": "Side profile of TheSchumann device showing premium finish"
+          "caption": "Side profile of The Schumann device showing premium finish"
         }
       ]
     }
@@ -363,14 +363,14 @@ export const homePageSEO = {
   schema: {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "name": "TheSchumann",
+    "name": "The Schumann",
     "url": "https://theschumann.com",
     "logo": {
       "@type": "ImageObject",
       "url": "https://theschumann.com/logo.png",
       "width": "512",
       "height": "512",
-      "caption": "TheSchumann Logo"
+      "caption": "The Schumann Logo"
     },
     "image": {
       "@type": "ImageObject",
@@ -384,12 +384,12 @@ export const homePageSEO = {
 export const marketingImages = {
   hero: {
     src: "/marketing/sleep-revolution.jpg",
-    alt: "TheSchumann Sleep Revolution - Premium 7.83 Hz Frequency Generator",
+    alt: "The Schumann Sleep Revolution - Premium 7.83 Hz Frequency Generator",
     width: 1200,
     height: 630,
     priority: true,
     seo: {
-      caption: "Experience Deep, Restful Sleep with TheSchumann Device",
+      caption: "Experience Deep, Restful Sleep with The Schumann Device",
       contentUrl: "https://theschumann.com/marketing/sleep-revolution.jpg"
     }
   },
@@ -405,7 +405,7 @@ export const marketingImages = {
     },
     {
       src: "/marketing/natures-harmony.jpg",
-      alt: "Nature's Harmony - TheSchumann in Use",
+      alt: "Nature's Harmony - The Schumann in Use",
       width: 800,
       height: 800,
       seo: {
@@ -418,35 +418,35 @@ export const marketingImages = {
 export const productImages = {
   main: {
     src: "/product-front.jpg",
-    alt: "TheSchumann Device - Front View",
+    alt: "TheS chumann Device - Front View",
     width: 1200,
     height: 800,
     priority: true,
     seo: {
       caption: "TheSchumann 7.83 Hz Frequency Generator - Premium Model",
-      license: "Copyright © 2024 TheSchumann",
+      license: "Copyright © 2024 The Schumann",
       contentUrl: "https://theschumann.com/product-front.jpg",
     }
   },
   gallery: [
     {
       src: "/product-side.jpg",
-      alt: "TheSchumann Device - Side View",
+      alt: "The Schumann Device - Side View",
       width: 800,
       height: 800,
       seo: {
-        caption: "Side profile of TheSchumann device showing premium finish",
+        caption: "Side profile of The Schumann device showing premium finish",
         license: "Copyright © 2024 TheSchumann"
       }
     },
     {
       src: "/product-lifestyle.jpg",
-      alt: "TheSchumann Device in use",
+      alt: "The Schumann Device in use",
       width: 800,
       height: 800,
       seo: {
-        caption: "TheSchumann device in a bedroom setting",
-        license: "Copyright © 2024 TheSchumann"
+        caption: "The Schumann device in a bedroom setting",
+        license: "Copyright © 2024 The Schumann"
       }
     }
   ]
