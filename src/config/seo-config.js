@@ -57,38 +57,7 @@ export const seoConfig = {
       }
     }
   },
-  about: {
-    title: "About Schumann | Leaders in Frequency Medicine Research",
-    description: "Meet our team of experts pioneering frequency medicine research. Led by Harvard and Stanford alumni with 20+ years of experience in electromagnetic frequency studies.",
-    keywords: "frequency medicine experts, Schumann team, scientific research, electromagnetic specialists, frequency technology innovation",
-    schema: {
-      "@type": "Organization",
-      "name": "Schumann Research",
-      "url": "https://theschumann.com/about",
-      "logo": "/logo.png",
-      "foundingDate": "2020",
-      "founders": [{
-        "@type": "Person",
-        "name": "Dr. Elena Rodriguez",
-        "jobTitle": "Chief Scientific Officer",
-        "alumniOf": "Harvard University",
-        "sameAs": "https://linkedin.com/in/elena-rodriguez"
-      }],
-      "employees": [
-        {
-          "@type": "Person",
-          "name": "Michael Chen",
-          "jobTitle": "Product Development Lead"
-        },
-        {
-          "@type": "Person",
-          "name": "Dr. Sarah Johnson",
-          "jobTitle": "Lead Research Scientist",
-          "alumniOf": "Stanford University"
-        }
-      ]
-    }
-  },
+  
   product: {
     title: "Buy The Schumann Device | Premium 7.83 Hz Frequency Generator",
     description: "Transform your sleep and well-being with TheSchumann device. Features 7.83Hz frequency generation, EMF protection, and 12-hour battery life. Free worldwide shipping.",
@@ -129,6 +98,38 @@ export const seoConfig = {
           "width": "800",
           "height": "800",
           "caption": "Side profile of The Schumann device showing premium finish"
+        }
+      ]
+    }
+  },
+  about: {
+    title: "About Schumann | Leaders in Frequency Medicine Research",
+    description: "Meet our team of experts pioneering frequency medicine research. Led by Harvard and Stanford alumni with 20+ years of experience in electromagnetic frequency studies.",
+    keywords: "frequency medicine experts, Schumann team, scientific research, electromagnetic specialists, frequency technology innovation",
+    schema: {
+      "@type": "Organization",
+      "name": "Schumann Research",
+      "url": "https://theschumann.com/about",
+      "logo": "/logo.png",
+      "foundingDate": "2020",
+      "founders": [{
+        "@type": "Person",
+        "name": "Dr. Elena Rodriguez",
+        "jobTitle": "Chief Scientific Officer",
+        "alumniOf": "Harvard University",
+        "sameAs": "https://linkedin.com/in/elena-rodriguez"
+      }],
+      "employees": [
+        {
+          "@type": "Person",
+          "name": "Michael Chen",
+          "jobTitle": "Product Development Lead"
+        },
+        {
+          "@type": "Person",
+          "name": "Dr. Sarah Johnson",
+          "jobTitle": "Lead Research Scientist",
+          "alumniOf": "Stanford University"
         }
       ]
     }
