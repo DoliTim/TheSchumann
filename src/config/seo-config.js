@@ -21,7 +21,7 @@ export const seoConfig = {
         "@type": "Offer",
         "price": "69.99",
         "priceCurrency": "USD",
-        "availability": "https://schema.org/InStock",
+        "availability": "https://theschumann.com/product",
         "seller": {
           "@type": "Organization",
           "name": "TheSchumann"
@@ -36,7 +36,7 @@ export const seoConfig = {
     schema: {
       "@type": "Organization",
       "name": "Schumann Research",
-      "url": "https://schumann.com/about",
+      "url": "https://theschumann.com/about",
       "logo": "/logo.png",
       "foundingDate": "2020",
       "founders": [{
@@ -78,7 +78,7 @@ export const seoConfig = {
         "@type": "Offer",
         "price": "69.99",
         "priceCurrency": "USD",
-        "availability": "https://schema.org/InStock",
+        "availability": "https://theschumann.com/product",
         "priceValidUntil": "2024-12-31",
         "warranty": "30-day satisfaction guarantee"
       },
@@ -86,8 +86,23 @@ export const seoConfig = {
         "@type": "AggregateRating",
         "ratingValue": "4.8",
         "reviewCount": "12500"
-      }
-      
+      },
+      "image": [
+        {
+          "@type": "ImageObject",
+          "url": "https://theschumann.com/product-front.jpg",
+          "width": "1200",
+          "height": "800",
+          "caption": "TheSchumann 7.83 Hz Frequency Generator - Premium Model"
+        },
+        {
+          "@type": "ImageObject",
+          "url": "https://theschumann.com/product-side.jpg",
+          "width": "800",
+          "height": "800",
+          "caption": "Side profile of TheSchumann device showing premium finish"
+        }
+      ]
     }
   },
   education: {
@@ -339,4 +354,100 @@ export const seoConfig = {
       }
     }
   }
+};
+
+export const homePageSEO = {
+  title: "Schumann Resonance | Official 7.83 Hz Earth Frequency Technology",
+  description: "Experience the original Schumann resonance device. NASA-validated 7.83 Hz technology for sleep, wellness & EMF protection. Used in 50+ research studies with 94% effectiveness.",
+  keywords: "Schumann resonance, 7.83 Hz, Earth frequency, Schumann device, Schumann technology, original Schumann",
+  schema: {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "TheSchumann",
+    "url": "https://theschumann.com",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://theschumann.com/logo.png",
+      "width": "512",
+      "height": "512",
+      "caption": "TheSchumann Logo"
+    },
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://theschumann.com/logo.png",
+      "width": "512",
+      "height": "512"
+    }
+  }
+};
+
+export const marketingImages = {
+  hero: {
+    src: "/marketing/sleep-revolution.jpg",
+    alt: "TheSchumann Sleep Revolution - Premium 7.83 Hz Frequency Generator",
+    width: 1200,
+    height: 630,
+    priority: true,
+    seo: {
+      caption: "Experience Deep, Restful Sleep with TheSchumann Device",
+      contentUrl: "https://theschumann.com/marketing/sleep-revolution.jpg"
+    }
+  },
+  features: [
+    {
+      src: "/marketing/frequency-of-life.jpg",
+      alt: "The Frequency of Life - TheSchumann Device",
+      width: 800,
+      height: 800,
+      seo: {
+        caption: "Your path to natural harmony starts here"
+      }
+    },
+    {
+      src: "/marketing/natures-harmony.jpg",
+      alt: "Nature's Harmony - TheSchumann in Use",
+      width: 800,
+      height: 800,
+      seo: {
+        caption: "Rediscover Earth's Natural Frequency"
+      }
+    }
+  ]
+};
+
+export const productImages = {
+  main: {
+    src: "/product-front.jpg",
+    alt: "TheSchumann Device - Front View",
+    width: 1200,
+    height: 800,
+    priority: true,
+    seo: {
+      caption: "TheSchumann 7.83 Hz Frequency Generator - Premium Model",
+      license: "Copyright © 2024 TheSchumann",
+      contentUrl: "https://theschumann.com/product-front.jpg",
+    }
+  },
+  gallery: [
+    {
+      src: "/product-side.jpg",
+      alt: "TheSchumann Device - Side View",
+      width: 800,
+      height: 800,
+      seo: {
+        caption: "Side profile of TheSchumann device showing premium finish",
+        license: "Copyright © 2024 TheSchumann"
+      }
+    },
+    {
+      src: "/product-lifestyle.jpg",
+      alt: "TheSchumann Device in use",
+      width: 800,
+      height: 800,
+      seo: {
+        caption: "TheSchumann device in a bedroom setting",
+        license: "Copyright © 2024 TheSchumann"
+      }
+    }
+  ]
 }; 

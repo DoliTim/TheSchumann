@@ -66,6 +66,11 @@ export default function SEO({
           })}
         </script>
       )}
+
+      {/* Mobile Optimization Meta Tags */}
+      <meta name="format-detection" content="telephone=no"/>
+      <meta name="mobile-web-app-capable" content="yes"/>
+      <meta name="apple-mobile-web-app-capable" content="yes"/>
     </Helmet>
   );
 } 

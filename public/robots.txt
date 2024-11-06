@@ -3,3 +3,9 @@ User-agent: *
 Allow: /
 
 Sitemap: https://theschumann.com/sitemap.xml
+
+# Allow crawling of all content
+Allow: /blog/
+Allow: /about/
+Allow: /product/
+Allow: /education/
