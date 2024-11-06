@@ -775,20 +775,22 @@ export const specializedSEO = {
   }
 };
 
-export const breadcrumbSchema = {
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://theschumann.com/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Products",
-      "item": "https://theschumann.com/products/"
-    }
+export const searchTerms = {
+  primary: [
+    "Schumann device",
+    "Schumann resonance device",
+    "Schumann frequency generator",
+    "Schumann 7.83 Hz",
+    "Schumann resonance technology"
+  ],
+  secondary: [
+    "7.83 Hz device",
+    "resonance generator",
+    "frequency device",
+    "EMF protection device",
+    "sleep improvement device"
   ]
-}; 
+};
+
+// Update meta keywords across all pages to include these variations
+export const globalKeywords = "Schumann device, Schumann resonance, Schumann frequency, 7.83 Hz generator, resonance device, frequency generator"; 
