@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRightIcon, SparklesIcon } from '@heroicons/react/24/outline';
 import { useState } from 'react';
+import { FaFacebook, FaInstagram } from 'react-icons/fa';
 
 function Footer() {
   return (
@@ -16,6 +17,24 @@ function Footer() {
             <p className="text-gray-400 text-sm leading-relaxed">
               Enhancing wellness through Earth's natural frequency. Experience the power of 7.83 Hz.
             </p>
+            <div className="flex space-x-4 pt-4">
+              <a 
+                href="https://www.facebook.com/people/The-Schumann/61568430865401/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-purple-400 transition-colors duration-200"
+              >
+                <FaFacebook className="h-6 w-6" />
+              </a>
+              <a 
+                href="https://www.instagram.com/theschumannresonance/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-purple-400 transition-colors duration-200"
+              >
+                <FaInstagram className="h-6 w-6" />
+              </a>
+            </div>
           </div>
 
           {/* Quick Links */}
