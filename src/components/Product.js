@@ -5,6 +5,40 @@ import { CheckCircleIcon, ShieldCheckIcon, TruckIcon, SparklesIcon } from '@hero
 import SEO from './SEO';
 import { seoConfig } from '../config/seo-config';
 
+// Add structured image data
+const productImages = [
+  {
+    src: "/product-front.jpg",
+    alt: "Schumann Resonance Device 7.83 Hz Generator - Front View",
+    title: "Premium Schumann Device Front View",
+    width: 1200,
+    height: 800,
+    loading: "eager", // Priority load for main product image
+    description: "Premium 7.83 Hz Schumann Resonance Generator with EMF protection and sleep enhancement technology",
+    className: "w-full h-full object-center object-cover"
+  },
+  {
+    src: "/product-side.jpg",
+    alt: "Schumann Device Side Profile - USB-C Charging Port View",
+    title: "Schumann Device Side View",
+    width: 800,
+    height: 800,
+    loading: "lazy",
+    description: "Side view showing premium finish and USB-C charging port",
+    className: "w-full h-full object-center object-cover"
+  },
+  {
+    src: "/product-lifestyle.jpg",
+    alt: "Schumann Device in Modern Bedroom Setting - Sleep Enhancement",
+    title: "Schumann Device Lifestyle View",
+    width: 1200,
+    height: 800,
+    loading: "lazy",
+    description: "Lifestyle image showing the device in use for optimal sleep enhancement",
+    className: "w-full h-full object-center object-cover"
+  }
+];
+
 export default function Product() {
   const [selectedOption, setSelectedOption] = useState(null);
   const { addToCart } = useCart();
@@ -98,14 +132,13 @@ export default function Product() {
               {/* Main Product Image */}
               <div 
                 className="aspect-w-3 aspect-h-4 rounded-2xl overflow-hidden bg-zinc-800/50 backdrop-blur-xl border border-white/10 cursor-pointer"
-                onClick={() => handleImageClick('/product-front.jpg')}
+                onClick={() => handleImageClick(productImages[0].src)}
               >
                 <motion.img
-                  src="/product-front.jpg"
-                  alt="Schumann Device Front View"
-                  className="w-full h-full object-center object-cover"
+                  {...productImages[0]}
                   whileHover={{ scale: 1.087 }}
                   transition={{ duration: 0.3 }}
+                  itemProp="image"
                 />
               </div>
               
@@ -113,33 +146,31 @@ export default function Product() {
               <div className="grid grid-cols-2 gap-4">
                 <div 
                   className="aspect-w-1 aspect-h-1 rounded-xl overflow-hidden bg-zinc-800/50 backdrop-blur-xl border border-white/10 cursor-pointer"
-                  onClick={() => handleImageClick('/product-side.jpg')}
+                  onClick={() => handleImageClick(productImages[1].src)}
                 >
                   <motion.img
-                    src="/product-side.jpg"
-                    alt="Schumann Device Side View"
-                    className="w-full h-full object-center object-cover"
+                    {...productImages[1]}
                     whileHover={{ scale: 1.08 }}
                     transition={{ duration: 0.3 }}
+                    itemProp="additionalProperty"
                   />
                 </div>
                 
                 <div 
                   className="aspect-w-1 aspect-h-1 rounded-xl overflow-hidden bg-zinc-800/50 backdrop-blur-xl border border-white/10 cursor-pointer"
-                  onClick={() => handleImageClick('/product-lifestyle.jpg')}
+                  onClick={() => handleImageClick(productImages[2].src)}
                 >
                   <motion.img
-                    src="/product-lifestyle.jpg"
-                    alt="Schumann Device in Use"
-                    className="w-full h-full object-center object-cover"
+                    {...productImages[2]}
                     whileHover={{ scale: 1.08 }}
                     transition={{ duration: 0.3 }}
+                    itemProp="additionalProperty"
                   />
                 </div>
               </div>
             </div>
 
-            {/* Image Zoom Modal */}
+            {/* Image Zoom Modal with enhanced SEO */}
             <AnimatePresence>
               {selectedImage && (
                 <motion.div
@@ -148,18 +179,22 @@ export default function Product() {
                   exit={{ opacity: 0 }}
                   onClick={handleCloseZoom}
                   className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4 cursor-zoom-out"
+                  role="dialog"
+                  aria-label="Product image zoom view"
                 >
                   <motion.img
                     src={selectedImage}
-                    alt="Zoomed product view"
+                    alt={productImages.find(img => img.src === selectedImage)?.alt}
                     className="max-h-[90vh] max-w-[90vw] object-contain rounded-lg"
                     initial={{ scale: 0.9 }}
                     animate={{ scale: 1 }}
                     exit={{ scale: 0.9 }}
+                    itemProp="image"
                   />
                   <button
                     onClick={handleCloseZoom}
                     className="absolute top-4 right-4 text-white hover:text-gray-300"
+                    aria-label="Close zoom view"
                   >
                     <svg
                       className="w-6 h-6"
